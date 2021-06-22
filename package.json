@@ -1,0 +1,27 @@
+{
+  "name": "petlife",
+  "version": "1.0.0",
+  "description": "Sistema para gerenciar as atividades do seu pet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulolemosfn/PetLife.git"
+  },
+  "keywords": [
+    "pet"
+  ],
+  "author": "Paulo Lemos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulolemosfn/PetLife/issues"
+  },
+  "homepage": "https://github.com/paulolemosfn/PetLife#readme",
+  "dependencies": {
+    "next": "^11.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
