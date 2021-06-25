@@ -1,4 +1,5 @@
 import Header from "../components/header"
+import Link from 'next/link'
 
 function RegisterPage() {
   return <>
@@ -13,7 +14,9 @@ function RegisterPage() {
       <input id="senha" type="password" placeholder="Confirme sua senha" />
     </form>
     <button>Cadastrar</button>
-    <a href="./">Voltar para tela inicial</a>
+    <Link href="/">
+      <a >Voltar para tela inicial</a>
+    </Link>
   </>
 }
 

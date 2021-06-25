@@ -1,4 +1,5 @@
 import Header from "../components/header"
+import Link from 'next/link'
 
 function HomePage() {
   return <>
@@ -11,7 +12,9 @@ function HomePage() {
         <input id="senha" type="password" placeholder="Digite aqui sua senha" />
       </form>
       <button>Entrar</button>
-      <a href="./register">Clique aqui para se cadastrar</a>
+      <Link href="/register">
+        <a >Clique aqui para se cadastrar</a>
+      </Link>
     </div>
   </>
 }
