@@ -135,3 +135,21 @@ input {
 button {
   padding: 2rem 8rem;
 }
+
+
+/* Cards */
+.card {
+  width: 20%;
+  border: .2rem solid var(--blue);
+  padding: 1rem .5rem;
+  font-weight: 300;
+  line-height: 5rem;
+  margin: .5rem;
+  text-align: center;
+  border-radius: .8rem;
+}
+
+.margem {
+  margin: .5rem;
+  width: 60rem;
+}

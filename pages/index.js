@@ -1,7 +1,7 @@
 import Header from "../components/header"
 import Link from 'next/link'
 
-function HomePage() {
+function LoginPage() {
   return <>
     <Header />
     <div>
@@ -11,7 +11,9 @@ function HomePage() {
         <label>Senha</label>
         <input id="senha" type="password" placeholder="Digite aqui sua senha" />
       </form>
-      <button>Entrar</button>
+      <Link href="/home">
+        <button>Entrar</button>
+      </Link>
       <Link href="/register">
         <a >Clique aqui para se cadastrar</a>
       </Link>
@@ -19,4 +21,5 @@ function HomePage() {
   </>
 }
 
-export default HomePage
+
+export default LoginPage
