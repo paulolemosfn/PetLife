@@ -5,6 +5,7 @@ function ActivitiesPage() {
   return <>
     <Header />
     <div>
+      <h2>Lista das atividades</h2>
       <Link href="/home">
         <button>Voltar para home</button>
       </Link>
