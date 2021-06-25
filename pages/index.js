@@ -4,7 +4,7 @@ import Link from 'next/link'
 function HomePage() {
   return <>
     <Header />
-    <div class="centralized">
+    <div>
       <form>
         <label>E-mail</label>
         <input id="email" type="text" placeholder="Digite aqui seu e-mail" />
