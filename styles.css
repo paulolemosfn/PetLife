@@ -76,7 +76,7 @@ button, .button{
   align-items: center;
   justify-content: center;
 
-  background: var(--blue);
+  background: var(--black);
   color: var(--white);
 
   transition: filter .2s;
@@ -140,7 +140,7 @@ button {
 /* Cards */
 .card {
   width: 20%;
-  border: .2rem solid var(--blue);
+  border: .2rem solid var(--overlay);
   padding: 1rem .5rem;
   font-weight: 300;
   line-height: 5rem;
@@ -152,4 +152,38 @@ button {
 .margem {
   margin: .5rem;
   width: 60rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+.add{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  margin: .5rem;
+  width:60rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 13.5rem;
+  border: .2rem solid var(--overlay);
+}
+.pageHeaderAct{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-create{
+  display: flex;
+ text-align: center;
+ align-items: center;
+  
+}
+.form-create button.btn-create{
+  /* background: var(--blue) */
+  align-items: flex-start;
+  padding: 2.8rem;
+  justify-content:flex-end  ;
+ 
 }
