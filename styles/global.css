@@ -38,27 +38,10 @@ body, button, input, textarea{
   /* font-family: 'Open Sans', sans-serif; */
   font-family: 'Poppins', sans-serif;
 }
-.content{
-  width: 100%;
-  margin: 0 auto;
-}
 
-.content header img{
-  transition: filter .2s;
-  cursor: pointer;
-  filter: opacity(1.2);
-}
-
-.sr-only{
-  position : absolute;
-  height: 1px;
-  width: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip-path: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+form {
+  display: flex;
+  flex-direction: column;
 }
 
 /* input and buttons */
@@ -88,42 +71,8 @@ button:hover, .button:hover{
   filter: brightness(1.2);
 }
 
-button > img,
-.button > img{
-  margin-right: 1rem;
-  width: 2rem;
-}
-
-button.outlined,
-.button.outlined{
-  background: var(--white);
-  color: var(--blue);
-  border: .2rem solid var(--blue);
-}
-
-button.red,
-.button.red{
-  background: var(--red);
-  color: var(--white);
-}
-
-button.grey,
-.button.grey{
-  background: var(--grey-light);
-  color: var(--grey-dark);
-}
 
 /* HEADER */
-
-.content header{
-  width: 80%;
-  margin: 3.5rem auto;
-}
-
-.content header img{
-  width:16.7rem;
-}
-
 label {
   padding: 1rem;
 }
@@ -132,24 +81,13 @@ input {
   padding: 3rem;
 }
 
-button {
-  padding: 2rem 8rem;
-}
-
-
 /* Cards */
-.card {
-  width: 20%;
-  border: .2rem solid var(--blue);
-  padding: 1rem .5rem;
-  font-weight: 300;
-  line-height: 5rem;
-  margin: .5rem;
-  text-align: center;
-  border-radius: .8rem;
+.cards {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
 }
 
-.margem {
-  margin: .5rem;
-  width: 60rem;
+.card {
+  width: stretch;
 }

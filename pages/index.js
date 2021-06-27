@@ -1,10 +1,11 @@
-import Header from "../components/header"
 import Link from 'next/link'
+import Header from "../components/header"
+import styles from '../styles/index.module.css'
 
 function LoginPage() {
   return <>
     <Header />
-    <div>
+    <div class={styles.content}>
       <form>
         <label>E-mail</label>
         <input id="email" type="text" placeholder="Digite aqui seu e-mail" />
@@ -20,6 +21,5 @@ function LoginPage() {
     </div>
   </>
 }
-
 
 export default LoginPage
