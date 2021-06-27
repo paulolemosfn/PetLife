@@ -4,13 +4,13 @@ import Link from 'next/link'
 function HomePage() {
   return <>
     <Header />
-    <div class="content">
-      <div class="cards">
+    <div>
+      <div>
         <Link href="/pets">
-          <button class="button card">Seus Pets</button>
+          <button>Seus Pets</button>
         </Link>
         <Link href="/activities">
-          <button class="button card">Atividades dos Pets</button>
+          <button>Atividades dos Pets</button>
         </Link>
       </div>
     </div>

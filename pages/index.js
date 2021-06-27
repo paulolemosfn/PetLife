@@ -5,7 +5,7 @@ import styles from '../styles/index.module.css'
 function LoginPage() {
   return <>
     <Header />
-    <div class={styles.content}>
+    <div className={styles.content}>
       <form>
         <label>E-mail</label>
         <input id="email" type="text" placeholder="Digite aqui seu e-mail" />
