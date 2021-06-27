@@ -59,7 +59,7 @@ button, .button{
   align-items: center;
   justify-content: center;
 
-  background: var(--blue);
+  background: var(--black);
   color: var(--white);
 
   transition: filter .2s;

@@ -5,7 +5,10 @@ function ActivitiesPage() {
   return <>
     <Header />
     <div>
-      <h2>Lista das atividades</h2>
+      <h2>Registros dos seus pets</h2>
+      <Link href="/activities/select">
+      <button>Selecione seu pet</button>
+      </Link>
       <Link href="/home">
         <button>Voltar para home</button>
       </Link>
