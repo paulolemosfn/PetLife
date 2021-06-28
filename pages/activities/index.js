@@ -24,6 +24,9 @@ function ActivitiesPage() {
     <div>
       
       <h2>Registros dos seus pets</h2>
+      <Link href="/activities/select">
+      <button>Selecione seu pet</button>
+      </Link>
       <table>
         <thead>
           <tr>
@@ -46,9 +49,6 @@ function ActivitiesPage() {
         </tbody>
 
       </table>
-      <Link href="/activities/select">
-      <button>Selecione seu pet</button>
-      </Link>
       <Link href="/home">
         <button>Voltar para home</button>
       </Link>
