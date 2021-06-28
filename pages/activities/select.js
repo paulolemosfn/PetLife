@@ -13,8 +13,8 @@ function SelectPage() {
       <Link href="/activities/select/add">
       <button>Selecionar</button>
       </Link>
-      <Link href="/home">
-        <button>Voltar para home</button>
+      <Link href="/activities">
+        <button>Voltar para as suas atividades</button>
       </Link>
     </div>
   </>
