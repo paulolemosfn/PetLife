@@ -13,7 +13,7 @@ function LoginPage() {
         <input id="senha" type="password" placeholder="Digite aqui sua senha" />
       </form>
       <Link href="/home">
-        <button>Entrar</button>
+        <button class= "btn logins">Entrar</button>
       </Link>
       <Link href="/register">
         <a >Clique aqui para se cadastrar</a>
