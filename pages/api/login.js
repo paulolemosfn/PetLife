@@ -8,6 +8,12 @@ export default function handler(req, res) {
     });
   }
 
+  if (email !== "admin@petlife.com" || password !== "123456") {
+    return res.status(401).json({
+      message: 'E-mail e/ou senha são inválidos!'
+    });
+  }
+
   return res.status(200).json({ message: "Ok!" });
 
 }
