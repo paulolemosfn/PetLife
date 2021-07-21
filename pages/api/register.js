@@ -15,7 +15,7 @@ export default function handlerRegister(req, res) {
     
     if (confirmPassword !== password){
         return res.status(400).json({
-            message: 'As senhas tem que serem iguais'
+            message: 'As senhas estão diferentes'
         })
     }
     
