@@ -10,12 +10,20 @@ export default function handler(req, res) {
     });
   }
 
-  // if (email !== "admin@petlife.com" || password !== "123456") {
-  //   return res.status(401).json({
-  //     message: 'E-mail e/ou senha são inválidos!'
-  //   });
-  // }
+  const userExists = database.find(eachUser => eachUser.email === email);
 
-  return res.status(200).json(database);
+  if (!userExists) {
+    return res.status(401).json({
+      message: 'Não exite e-mail e/ou senha cadastrados!'
+    });
+  }
+
+  if (userExists.password !== password) {
+    return res.status(401).json({
+      message: 'E-mail e/ou senha inválidos!'
+    });
+  }
+
+  return res.send('');
 
 }

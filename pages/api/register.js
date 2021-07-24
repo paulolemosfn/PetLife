@@ -31,7 +31,5 @@ export default function handlerRegister(req, res) {
 
     database.push(newUser);
 
-    delete newUser.password; // remove password from newUser
-
-    return res.status(201).json(newUser);
+    return res.status(201).json({ email: newUser.email });
 }
