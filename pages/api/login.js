@@ -1,3 +1,5 @@
+import database from '../../database'
+
 export default function handler(req, res) {
 
   const { email, password } = req.body;

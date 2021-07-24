@@ -9,18 +9,21 @@ function RegisterPage() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const router = useRouter();
-  
-  
-  async function submitRegister(){
+
+
+  async function submitRegister() {
 
 
     try {
       const response = await axios.post('/api/register',
-      {
-        email: email,
-        password: password,
-        confirmPassword: confirmPassword
-      });
+        {
+          email: email,
+          password: password,
+          confirmPassword: confirmPassword
+        });
+
+      console.log('Resposta completa', response);
+      console.log(response.data);
 
       router.push("/");
 
@@ -52,7 +55,7 @@ function RegisterPage() {
       <input id="email" type="text" placeholder="Digite aqui seu e-mail" onChange={alterationEmailRegister} />
 
       <label>Senha</label>
-      <input id="senha" type="password" placeholder="Digite aqui sua senha" onChange={alterationPasswordRegister}/>
+      <input id="senha" type="password" placeholder="Digite aqui sua senha" onChange={alterationPasswordRegister} />
 
       <label>Confirmação de senha</label>
       <input id="confirmarSenha" type="password" placeholder="Confirme sua senha" onChange={alterationConfirmPassword} />
@@ -61,9 +64,9 @@ function RegisterPage() {
     <button onClick={submitRegister}>Cadastrar</button>
     <Link href="/">
       <a >Voltar para tela inicial</a>
-      
+
     </Link>
-  </> 
+  </>
 }
 
 export default RegisterPage
