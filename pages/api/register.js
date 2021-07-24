@@ -1,10 +1,9 @@
-export default function handlerRegister(req, res) {
-
-    const { database } = require('../../database');
+import database from '../../database'
+export default async function handlerRegister(req, res) {
 
     const { email, password, confirmPassword } = req.body;
 
-    const userExists = database.find(eachUser => eachUser.email === email);
+    const userExists = database.users.find(eachUser => eachUser.email === email);
 
     if (userExists) {
         return res.status(400).json({
@@ -29,7 +28,7 @@ export default function handlerRegister(req, res) {
         password
     };
 
-    database.push(newUser);
+    await database.users.push(newUser);
 
     return res.status(201).json({ email: newUser.email });
 }

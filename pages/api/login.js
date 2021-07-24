@@ -1,6 +1,5 @@
+import database from '../../database'
 export default function handler(req, res) {
-
-  const { database } = require('../../database');
 
   const { email, password } = req.body;
 
@@ -10,7 +9,7 @@ export default function handler(req, res) {
     });
   }
 
-  const userExists = database.find(eachUser => eachUser.email === email);
+  const userExists = database.users.find(eachUser => eachUser.email === email);
 
   if (!userExists) {
     return res.status(401).json({
