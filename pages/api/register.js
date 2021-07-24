@@ -1,13 +1,16 @@
-import database from '../../database'
-
 export default function handlerRegister(req, res) {
+
+    const { database } = require('../../database');
+
     const { email, password, confirmPassword } = req.body;
 
-    // if (email === "adminID@petlife.com") {
-    //     return res.status(401).json({
-    //         message: 'E-mail já cadastrado'
-    //     });
-    // };
+    const userExists = database.find(eachUser => eachUser.email === email);
+
+    if (userExists) {
+        return res.status(400).json({
+            message: 'E-mail já cadastrado'
+        });
+    };
 
     if (!email || !password || !confirmPassword) {
         return res.status(400).json({

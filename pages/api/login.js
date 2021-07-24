@@ -1,6 +1,6 @@
-import database from '../../database'
-
 export default function handler(req, res) {
+
+  const { database } = require('../../database');
 
   const { email, password } = req.body;
 
@@ -10,12 +10,12 @@ export default function handler(req, res) {
     });
   }
 
-  if (email !== "admin@petlife.com" || password !== "123456") {
-    return res.status(401).json({
-      message: 'E-mail e/ou senha são inválidos!'
-    });
-  }
+  // if (email !== "admin@petlife.com" || password !== "123456") {
+  //   return res.status(401).json({
+  //     message: 'E-mail e/ou senha são inválidos!'
+  //   });
+  // }
 
-  return res.status(200).json({ message: "Ok!" });
+  return res.status(200).json(database);
 
 }

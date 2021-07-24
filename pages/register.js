@@ -22,9 +22,6 @@ function RegisterPage() {
           confirmPassword: confirmPassword
         });
 
-      console.log('Resposta completa', response);
-      console.log(response.data);
-
       router.push("/");
 
     } catch (error) {
