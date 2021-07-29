@@ -1,5 +1,5 @@
 import Database from '../../../db/config'
-export default async function handlerCreate(req, res) {
+export default async function handler(req, res) {
 
   switch (req.method) {
     case 'POST':
