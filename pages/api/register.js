@@ -1,44 +1,36 @@
-import database from '../../db'
+import Database from '../../db/config'
 export default async function handlerRegister(req, res) {
 
     const { email, password, confirmPassword } = req.body;
 
-    const sql = `SELECT * FROM users where email = ?`;
-    const params = [email];
+    if (!email || !password || !confirmPassword) {
+        return res.status(400).json({
+            message: 'É obrigatório informar e-mail, senha e confirmação da senha!'
+        });
+    };
 
-    // database.db.get(sql, params, (err, userExists) => {
-    //     if (userExists) {
-    //         return res.status(400).json({
-    //             message: 'E-mail já cadastrado'
-    //         });
-    //     };
+    const db = await Database();
+    const userExists = await db.get(`select * from users where email = "${email}"`);
 
+    if (userExists) {
+        return res.status(400).json({
+            message: 'E-mail já cadastrado'
+        });
+    };
 
-    // });
+    if (confirmPassword !== password) {
+        return res.status(400).json({
+            message: 'As senhas estão diferentes'
+        })
+    }
 
-    // const userExists = database.users.find(eachUser => eachUser.email === email);
+    const result = await db.run(`insert into users(email, password) values ("${email}", "${password}")`);
+    await db.close();
+    if (result.changes === 0) {
+        return res.status(500).json({
+            message: 'Ocorreu um erro ao cadastrar o novo usuário'
+        })
+    }
 
-
-
-    // if (!email || !password || !confirmPassword) {
-    //     return res.status(400).json({
-    //         message: 'É obrigatório informa e-mail, senha e confirmação da senha!'
-    //     });
-    // };
-
-    // if (confirmPassword !== password) {
-    //     return res.status(400).json({
-    //         message: 'As senhas estão diferentes'
-    //     })
-    // }
-
-    // const newUser = {
-    //     email,
-    //     password
-    // };
-
-    // await database.users.push(newUser);
-
-    // return res.status(201).json({ email: newUser.email });
-
+    return res.status(201).json({ email });
 }
