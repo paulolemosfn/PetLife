@@ -1,18 +1,21 @@
-import { useState } from 'react';
-import Link from 'next/link'
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import axios from 'axios';
 
 import Layout from '../../components/layout/layout'
 
 function PetsPage() {
 
-  const [pets, setPets] = useState([
-    {
-      nome: "Pretinha"
-    },
-    {
-      nome: "Milly"
-    }]
-  );
+  const [pets, setPets] = useState([]);
+
+  useEffect(async () => {
+    try {
+      const pets = await axios.get('/api/pets');
+      setPets(pets.data);
+    } catch (error) {
+
+    }
+  });
 
   return (
     <Layout>
@@ -32,9 +35,9 @@ function PetsPage() {
           <tbody>
             {
               pets.map(pet => (
-                <tr key={pet.nome}>
-                  <td>{pet.nome}</td>
-                  <td>Aqui colocaremos os botões para excluir e editar um pet</td>
+                <tr key={pet.id}>
+                  <td>{pet.name}</td>
+                  <td>Excluir</td>
                 </tr>
               ))
             }
