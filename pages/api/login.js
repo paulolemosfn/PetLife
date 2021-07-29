@@ -1,5 +1,5 @@
-import database from '../../database'
-export default function handler(req, res) {
+import Database from '../../db/config'
+export default async function handler(req, res) {
 
   const { email, password } = req.body;
 
@@ -9,7 +9,9 @@ export default function handler(req, res) {
     });
   }
 
-  const userExists = database.users.find(eachUser => eachUser.email === email);
+  const db = await Database();
+  const userExists = await db.get(`select * from users where email = '${email}'`);
+  await db.close();
 
   if (!userExists) {
     return res.status(401).json({

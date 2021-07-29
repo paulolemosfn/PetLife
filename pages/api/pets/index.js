@@ -1,4 +1,4 @@
-import database from '../../../database'
+// import database from '../../../database'
 export default function handlerCreate(req, res) {
 
   const { namePet, typePet, breedPet } = req.body;
@@ -11,7 +11,7 @@ export default function handlerCreate(req, res) {
   //     });
   // };
 
-  if (namePet ==='' || typePet ==='' || breedPet ==='') {
+  if (namePet === '' || typePet === '' || breedPet === '') {
     return res.status(400).json({
       message: 'Dados incompletos!'
     });
