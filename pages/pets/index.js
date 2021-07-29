@@ -17,6 +17,8 @@ function PetsPage() {
     }
   });
 
+  
+
   return (
     <Layout>
       <div>
@@ -37,7 +39,14 @@ function PetsPage() {
               pets.map(pet => (
                 <tr key={pet.id}>
                   <td>{pet.name}</td>
-                  <td>Excluir</td>
+                  <td>
+                    <button> Excluir </button>
+                  </td>
+                  <td>
+                    <Link href="/pets/update">
+                      <button > Alterar </button>
+                    </Link>
+                  </td>
                 </tr>
               ))
             }

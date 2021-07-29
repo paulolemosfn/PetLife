@@ -1,4 +1,5 @@
 import Database from '../../db/config'
+
 export default async function handlerRegister(req, res) {
 
     const { email, password, confirmPassword } = req.body;
