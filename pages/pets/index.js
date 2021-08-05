@@ -17,10 +17,10 @@ function PetsPage() {
     }
   });
 
-  
+
 
   return (
-    <Layout>
+    <>
       <div>
         <h2>Lista dos seus Pets</h2>
         <Link href="/pets/create">
@@ -43,7 +43,7 @@ function PetsPage() {
                     <button> Excluir </button>
                   </td>
                   <td>
-                    <Link href="/pets/update">
+                    <Link href={`/pets/update?id=${pet.id}`}>
                       <button > Alterar </button>
                     </Link>
                   </td>
@@ -57,8 +57,7 @@ function PetsPage() {
           <button>Voltar para home</button>
         </Link>
       </div>
-    </Layout>
-  )
+    </ >)
 }
 
 export default PetsPage
