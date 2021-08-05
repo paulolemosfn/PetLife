@@ -7,6 +7,8 @@ export default async function handler(req, res) {
       return updatePet(req, res);
     case 'GET':
       return getPet(req, res);
+    case 'DELETE':
+      return deletePet(req, res);
   }
 
 }
@@ -29,7 +31,15 @@ async function updatePet(req, res) {
 
 async function getPet(req, res) {
   const db = await Database();
-  const { id } = req.query
+  const { id } = req.query;
   const pet = await db.get(`select * from pets where id = ${id}`);
   return res.json(pet);
+}
+
+async function deletePet(req, res){
+  const db = await Database();
+  const { id } = req.query;
+  const deletePet = await db.get(`delete from pets where id = ${id}`);
+  return res.json(deletePet);
+
 }
