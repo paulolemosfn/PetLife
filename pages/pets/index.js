@@ -1,12 +1,17 @@
+import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
-
 import Layout from '../../components/layout/layout'
+
 
 function PetsPage() {
 
+  const router = useRouter();
   const [pets, setPets] = useState([]);
+  const [namePet, setNamePet] = useState('');
+
+
 
   useEffect(async () => {
     try {
@@ -17,7 +22,28 @@ function PetsPage() {
     }
   });
 
+  async function deletePet() {
 
+    try {
+      const response = await axios.get('/api/pets/[id]',
+        {
+          namePet,
+        });
+
+      alert(`Seu pet ${namePet} foi excluído com sucesso!`);
+
+      router.push("/pets");
+
+    } catch (error) {
+      alert("Seu Pet não foi excluído!")
+    }
+  };
+
+  // function deleteNamePet(event) {
+  //   event.preventDefault();
+  //   setNamePet(event.target.value);
+  // onChange={deleteNamePet}
+  // }
 
   return (
     <>
@@ -40,7 +66,7 @@ function PetsPage() {
                 <tr key={pet.id}>
                   <td>{pet.name}</td>
                   <td>
-                    <button> Excluir </button>
+                    <button onClick={deletePet} > Excluir </button>
                   </td>
                   <td>
                     <Link href={`/pets/update?id=${pet.id}`}>
