@@ -4,6 +4,12 @@ Um sistema para gerenciar a alimentação do seu pet.
 
 ## Funcionalidades do sistema
 
+
+### Login
+
+- [X] Registro de um novo usuário
+- [X] Página de login
+
 ### Dono do pet
 
 - [ ] Criar um dono do pet. Deve-se informar o nome do dono
@@ -13,10 +19,12 @@ Um sistema para gerenciar a alimentação do seu pet.
 
 ### Pet
 
-- [ ] Criar um pet. Deve-se informar o nome do pet
-- [ ] Ver todos os pets cadastrados. Mostrar o nome de cada pet cadastrado.
-- [ ] Alterar um pet. É possível alterar apenas o nome do pet
-- [ ] Excluir os pets selecionados. Tem que excluir também todas as atividades daqueles pets selecionados. Deve permitir selecionar todos os pets com apenas um click.
+- [X] Criar um pet. Deve-se informar o nome do pet
+- [X] Ver todos os pets cadastrados. Mostrar o nome de cada pet cadastrado.
+- [X] Alterar um pet. É possível alterar apenas o nome do pet
+- [X] Excluir os pets selecionados. 
+- [ ] Tem que excluir também todas as atividades daqueles pets selecionados. 
+- [ ] Deve permitir selecionar todos os pets com apenas um click.
 
 ### Atividade
 
