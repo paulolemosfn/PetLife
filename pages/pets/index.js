@@ -17,36 +17,36 @@ function PetsPage() {
     try {
       const pets = await axios.get('/api/pets');
       setPets(pets.data);
-    } catch (error) {
-
-    }
+    } catch (error) {}
+    
   });
+  
+   
+  
+  async function deletePet(id) {
+    
+      
+      try {
+        const response = await axios.delete(`/api/pets/${id}`);
+        
+        alert(`Seu pet foi excluído com sucesso!`);
+        
+        // router.push("/pets");
+        
 
-  async function deletePet() {
-
-    try {
-      const response = await axios.get('/api/pets/[id]',
-        {
-          namePet,
-        });
-
-      alert(`Seu pet ${namePet} foi excluído com sucesso!`);
-
-      router.push("/pets");
-
-    } catch (error) {
-      alert("Seu Pet não foi excluído!")
-    }
-  };
-
-  // function deleteNamePet(event) {
-  //   event.preventDefault();
-  //   setNamePet(event.target.value);
-  // onChange={deleteNamePet}
-  // }
-
-  return (
-    <>
+      } catch (error) {
+        alert("Seu Pet não foi excluído!")
+      }
+    };
+    
+    // function deleteNamePet(event) {
+      //   event.preventDefault();
+      //   setNamePet(event.target.value);
+      // onChange={deleteNamePet}
+      // }
+      
+      return (
+        <>
       <div>
         <h2>Lista dos seus Pets</h2>
         <Link href="/pets/create">
@@ -66,7 +66,7 @@ function PetsPage() {
                 <tr key={pet.id}>
                   <td>{pet.name}</td>
                   <td>
-                    <button onClick={deletePet} > Excluir </button>
+                    <button onClick={() => deletePet(pet.id)} > Excluir </button>
                   </td>
                   <td>
                     <Link href={`/pets/update?id=${pet.id}`}>
@@ -84,6 +84,6 @@ function PetsPage() {
         </Link>
       </div>
     </ >)
-}
+};
 
 export default PetsPage
