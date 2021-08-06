@@ -12,6 +12,9 @@ function HomePage() {
         <Link href="/activities">
           <button>Atividades dos Pets</button>
         </Link>
+        <Link href="/owners">
+          <button> Acessar os donos </button>
+        </Link>
       </div>
     </div>
   </>

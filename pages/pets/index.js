@@ -17,36 +17,36 @@ function PetsPage() {
     try {
       const pets = await axios.get('/api/pets');
       setPets(pets.data);
-    } catch (error) {}
-    
-  });
-  
-   
-  
-  async function deletePet(id) {
-    
-      
-      try {
-        const response = await axios.delete(`/api/pets/${id}`);
-        
-        alert(`Seu pet foi excluído com sucesso!`);
-        
-        // router.push("/pets");
-        
+    } catch (error) { }
 
-      } catch (error) {
-        alert("Seu Pet não foi excluído!")
-      }
-    };
-    
-    // function deleteNamePet(event) {
-      //   event.preventDefault();
-      //   setNamePet(event.target.value);
-      // onChange={deleteNamePet}
-      // }
-      
-      return (
-        <>
+  });
+
+
+
+  async function deletePet(id) {
+
+
+    try {
+      const response = await axios.delete(`/api/pets/${id}`);
+
+      alert(`Seu pet foi excluído com sucesso!`);
+
+      // router.push("/pets");
+
+
+    } catch (error) {
+      alert("Seu Pet não foi excluído!")
+    }
+  };
+
+  // function deleteNamePet(event) {
+  //   event.preventDefault();
+  //   setNamePet(event.target.value);
+  // onChange={deleteNamePet}
+  // }
+
+  return (
+    <>
       <div>
         <h2>Lista dos seus Pets</h2>
         <Link href="/pets/create">
