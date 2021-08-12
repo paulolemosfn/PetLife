@@ -1,7 +1,7 @@
+import Header from "../../components/header"
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Header from "../../components/header"
 import axios from 'axios';
 import Layout from '../../components/layout/layout'
 
@@ -10,6 +10,8 @@ function ownersPage() {
 
   const [owners, setOwners] = useState([]);
   const router = useRouter();
+  const [namePet, setNamePet] = useState('');
+
 
   useEffect(async () => {
     try {
@@ -30,7 +32,8 @@ function ownersPage() {
     }
   }
 
-  return <>
+  return (
+  <>
     <Header />
     <div>
 
@@ -38,10 +41,12 @@ function ownersPage() {
       <Link href="/owners/create">
         <button>Adicione um novo dono</button>
       </Link>
+      
       <table>
         <thead>
           <tr>
             <th>Nome dos donos</th>
+            <th>Ações</th>
           </tr>
         </thead>
         <tbody>
@@ -63,13 +68,12 @@ function ownersPage() {
           }
 
         </tbody>
-
       </table>
       <Link href="/home">
         <button>Voltar para home</button>
       </Link>
     </div>
-  </>
+  </>)
 };
 
 export default ownersPage

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
 import Layout from '../../components/layout/layout'
+import Header from "../../components/header"
 
 
 function PetsPage() {
@@ -47,6 +48,8 @@ function PetsPage() {
 
   return (
     <>
+    <Header />
+
       <div>
         <h2>Lista dos seus Pets</h2>
         <Link href="/pets/create">

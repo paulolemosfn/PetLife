@@ -37,6 +37,6 @@ async function getOwner(req, res) {
 async function deleteOwner(req, res) {
     const db = await Database();
     const { id } = req.query;
-    const deleteOwner = await db.get(`delete from oners where id = ${id}`)
+    const deleteOwner = await db.get(`delete from owners where id = ${id}`)
     return res.json(deleteOwner)
 }
