@@ -10,7 +10,6 @@ function ownersPage() {
 
   const [owners, setOwners] = useState([]);
   const router = useRouter();
-  const [namePet, setNamePet] = useState('');
 
 
   useEffect(async () => {
@@ -24,17 +23,19 @@ function ownersPage() {
   async function deleteOwner(id) {
     try {
       const response = await axios.delete(`/api/owners/${id}`);
-
+      console.log("cheguei aqui")
       alert(`O dono foi excluído com sucesso!`);
 
     } catch (error) {
       alert("O dono não foi excluído!")
+      console.log("cheguei aqui 2")
+
     }
-  }
+  };
 
   return (
   <>
-    <Header />
+    <Header/>
     <div>
 
       <h2>Registros dos donos dos pets</h2>
@@ -49,6 +50,7 @@ function ownersPage() {
             <th>Ações</th>
           </tr>
         </thead>
+        {/* onClick={() => deleteOwner(owner.id)} */}
         <tbody>
           {
             owners.map(owner => (
@@ -56,7 +58,7 @@ function ownersPage() {
                 <td>{owner.name}</td>
 
                 <td>
-                  <button onClick={() => deleteOwner(owner.id)}> Excluir </button>
+                <button  onClick={() => deleteOwner(owner.id)}> Excluir </button>
                 </td>
                 <td>
                   <Link href={`/owners/update?id=${owner.id}`}>
