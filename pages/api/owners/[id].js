@@ -1,13 +1,13 @@
-import Database from '../../../db/config'
+import Database from '../../../db/config';
 export default async function handler(req, res) {
 
-    switch (req.mehod) {
+    switch (req.method) {
         case 'PUT':
-            return updateOwner;
+            return updateOwner(req, res);
         case 'GET':
-            return getOwner;
+            return getOwner(req, res);
         case 'DELETE':
-            return deleteOwner;
+            return deleteOwner(req, res);
     }
 
 };
@@ -37,6 +37,6 @@ async function getOwner(req, res) {
 async function deleteOwner(req, res) {
     const db = await Database();
     const { id } = req.query;
-    const deleteOwner = await db.get(`delete from owners where id = ${id}`)
-    return res.json(deleteOwner)
+    const deletedOwner = await db.get(`delete from owners where id = ${id}`)
+    return res.json(deletedOwner)
 }
